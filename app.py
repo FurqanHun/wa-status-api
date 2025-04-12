@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import status_checker
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/health')
 def health_check():
