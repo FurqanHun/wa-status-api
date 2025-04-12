@@ -3,6 +3,10 @@ import status_checker
 
 app = Flask(__name__)
 
+@app.route('/health')
+def health_check():
+    return jsonify(status="up")
+
 @app.route('/api/status', methods=['GET'])
 def get_status():
     # Use the results from the status_checker.py
